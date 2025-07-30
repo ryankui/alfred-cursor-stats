@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>4F2C8B5A-1234-4567-8901-123456789ABC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F3D9C6B-2345-5678-9012-234567890DEF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Cursor Stats Alfred Workflow</string>
+	<key>description</key>
+	<string>查看 Cursor 基于次数的使用量统计</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Cursor Stats</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>正在获取 Cursor 使用量数据...</string>
+				<key>script</key>
+				<string>export cache_duration="{var:cache_duration}" &amp;&amp; export currency="{var:currency}" &amp;&amp; python3 cursor_stats.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>查看 Cursor Pro 使用量统计</string>
+				<key>title</key>
+				<string>Cursor Stats</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4F2C8B5A-1234-4567-8901-123456789ABC</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>export cache_duration="{var:cache_duration}" &amp;&amp; export currency="{var:currency}" &amp;&amp; python3 cursor_stats.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5F3D9C6B-2345-5678-9012-234567890DEF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Cursor Stats Alfred Workflow
+
+这是一个用于查看 Cursor 基于次数计费的统计信息的 Alfred workflow。
+
+### 功能特性
+
+1. **Premium 请求统计**
+   - 显示当前已使用的请求次数
+   - 显示剩余可用请求次数
+   - 显示每日平均可用请求数
+   - 简洁的进度条显示使用情况
+
+2. **使用量计费统计**
+   - 显示当前月花费金额
+   - 显示预算限制和剩余预算
+   - 支持多货币显示
+
+3. **账户周期信息**
+   - 显示上次重置时间
+   - 显示距离重置已过天数
+   - 简洁清晰的信息展示
+
+4. **快速操作**
+   - 刷新数据
+   - 打开 Cursor 设置页面
+
+### 要求
+
+- macOS
+- Alfred 4+ (需要 Powerpack)
+- Python 3.6+
+- 已安装并登录 Cursor
+
+### 故障排除
+
+如果遇到问题，请检查：
+1. Cursor 是否已正确登录
+2. 网络连接是否正常
+3. Python (python3) 是否可正常执行
+4. 查看错误日志：`~/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/cursor-stats/error.log`
+</string>
+	<key>uidata</key>
+	<dict>
+		<key>4F2C8B5A-1234-4567-8901-123456789ABC</key>
+		<dict>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>5F3D9C6B-2345-5678-9012-234567890DEF</key>
+		<dict>
+			<key>xpos</key>
+			<real>230</real>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>cursorstats</string>
+				<key>placeholder</key>
+				<string>输入自定义关键词</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>设置触发 workflow 的关键词</string>
+			<key>label</key>
+			<string>关键词</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>60</string>
+				<key>placeholder</key>
+				<string>缓存时间（秒）</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>数据缓存时间，避免频繁请求 API</string>
+			<key>label</key>
+			<string>缓存时间</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>cache_duration</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>USD</string>
+				<key>placeholder</key>
+				<string>USD, EUR, GBP, JPY, CNY 等</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>货币显示格式</string>
+			<key>label</key>
+			<string>货币类型</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>currency</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
